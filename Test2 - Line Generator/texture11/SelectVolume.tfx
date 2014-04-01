@@ -78,7 +78,7 @@ float4 PSPlane(psInput input) : SV_Target
 	World.w = 1.0f;
 	World = mul(World, TransformInverse);
 	
-	return abs(length(World.y) - Radius) < Thickness;
+	return 1 - smoothstep(0.0f, Thickness, abs(length(World.y) - Radius));
 }
 
 float4 PSPassThrough(psInput input) : SV_Target
