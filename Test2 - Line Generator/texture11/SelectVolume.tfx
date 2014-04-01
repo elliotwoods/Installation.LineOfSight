@@ -81,6 +81,28 @@ float4 PSPlane(psInput input) : SV_Target
 	return abs(length(World.y) - Radius) < Thickness;
 }
 
+float4 PSPassThrough(psInput input) : SV_Target
+{
+	float4 World;
+	World.xyz = texture2d.Sample(linearSampler,input.uv);
+	World.w = 1.0f;
+	float4 Object = mul(World, TransformInverse);
+	Object /= Object.w;
+	return Object;
+}
+
+float4 PSSphericalWave(psInput input) : SV_Target
+{
+	float4 World;
+	World.xyz = texture2d.Sample(linearSampler,input.uv);
+	World.w = 1.0f;
+	float4 Object = mul(World, TransformInverse);
+	Object /= Object.w;
+	
+	float r = length(Object.xyz);
+	float c = sin(r);
+	return 1.0f / r;
+}
 
 technique10 Sphere
 {
@@ -120,6 +142,22 @@ technique10 Plane
 	pass P0
 	{
 		SetPixelShader(CompileShader(ps_4_0,PSPlane()));
+	}
+}
+
+technique10 Passthrough
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,PSPassThrough()));
+	}
+}
+
+technique10 SphericalWave
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,PSSphericalWave()));
 	}
 }
 

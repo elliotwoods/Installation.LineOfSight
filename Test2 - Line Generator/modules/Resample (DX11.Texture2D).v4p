@@ -1,7 +1,7 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
    <PATCH nodename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\modules\Resample (DX11.Texture2D).v4p" systemname="Resample (DX11.Texture2D)" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\modules\Resample (DX11.Texture2D).v4p">
    <NODE systemname="Quad (DX11.Layer)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Quad (DX11.Layer)" componentmode="Hidden" id="0">
-   <BOUNDS type="Node" left="1665" top="2025" width="100" height="100">
+   <BOUNDS type="Node" left="1665" top="2475" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Transform" visible="1">
    </PIN>
@@ -11,15 +11,17 @@
    </PIN>
    </NODE>
    <NODE systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" id="1">
-   <BOUNDS type="Node" left="1830" top="1500" width="100" height="100">
+   <BOUNDS type="Node" left="1830" top="1950" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
    <PIN pinname="XYZ" slicecount="1" values="2">
    </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
    </NODE>
    <NODE systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="Hidden" id="2">
-   <BOUNDS type="Node" left="1500" top="2565" width="100" height="100">
+   <BOUNDS type="Node" left="1500" top="3015" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -43,9 +45,9 @@
    <NODE id="4" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Buffers">
    </PIN>
-   <BOUNDS type="Box" left="1500" top="3165" width="750" height="240">
+   <BOUNDS type="Box" left="2670" top="3915" width="750" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="1500" top="3165" width="750" height="240">
+   <BOUNDS type="Node" left="2670" top="3915" width="750" height="240">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="2" srcpinname="Buffers" dstnodeid="4" dstpinname="Input Node">
@@ -62,6 +64,30 @@
    </NODE>
    <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="0" dstpinname="Texture">
    </LINK>
-   <BOUNDS type="Window" left="14205" top="10430" width="3430" height="4165">
+   <BOUNDS type="Window" left="14205" top="10425" width="7335" height="5025">
    </BOUNDS>
+   <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="1830" top="1515" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Transform Out" dstnodeid="1" dstpinname="Transform In">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="7" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="2490" top="1485" width="2625" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2490" top="1485" width="2625" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;--never quite sure about this one|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
    </PATCH>
