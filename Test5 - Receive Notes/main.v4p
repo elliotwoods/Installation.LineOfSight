@@ -1,0 +1,165 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
+   <PATCH nodename="C:\Users\elliot\Desktop\Line Of Sight\Test5 - Receive Notes\main.v4p" systemname="main" filename="C:\Users\elliot\Desktop\Line Of Sight\Test5 - Receive Notes\main.v4p">
+   <BOUNDS type="Window" left="0" top="0" width="14400" height="17400">
+   </BOUNDS>
+   <NODE systemname="Server (OSC)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OSC.dll" nodename="Server (OSC)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="4725" top="6180" width="2160" height="270">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="1" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6825" top="5280" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6825" top="5280" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="Receive (OSC Value)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OSC.dll" nodename="Receive (OSC Value)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="5610" top="7440" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Address" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Mode" slicecount="1" values="All">
+   </PIN>
+   <PIN pinname="OnReceive" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Output" dstnodeid="2" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="6825" top="6915" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6825" top="6915" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Status" dstnodeid="3" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="Queue (String)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Queue (String)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="6000" top="7965" width="630" height="270">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Insert" visible="1">
+   </PIN>
+   <PIN pinname="Frame Count" slicecount="1" values="50">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Address" dstnodeid="4" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="OnReceive" dstnodeid="4" dstpinname="Insert">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="5" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="6000" top="8430" width="2970" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6000" top="8430" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="5" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="R+H (OSC Value Int)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OSC.dll" nodename="R+H (OSC Value Int)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="4740" top="9015" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Address" slicecount="1" values="/note">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Output" dstnodeid="6" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Stopwatch (Animation)" nodename="Stopwatch (Animation)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="6765" top="7755" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Run" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Reset" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="OnReceive" dstnodeid="7" dstpinname="Reset">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="8" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6780" top="8910" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6780" top="8910" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="s">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="8" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="R+H (OSC Value)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.OSC.dll" nodename="R+H (OSC Value)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="3765" top="9015" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Address" slicecount="1" values="/note">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Output" dstnodeid="9" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="10" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3765" top="9825" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3765" top="9825" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="10" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="3780" top="10485" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="255">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="11" dstpinname="Input 1">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="12" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3780" top="11175" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3780" top="11175" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Output" dstnodeid="12" dstpinname="Y Input Value">
+   </LINK>
+   </PATCH>
