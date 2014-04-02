@@ -7,6 +7,7 @@ Texture2D<float3> texture2d : PREVIOUS;
 float Radius = 1.0f;
 float Thickness = 0.1f;
 float Phase = 0.0f;
+float Alpha = 1.0f;
 float4x4 TransformInverse;
 float2 TargetSize:TARGETSIZE;
 Texture2D<float3> sunGradientTexture;
@@ -102,7 +103,7 @@ float4 PSSun(psInput input) : SV_Target
 	//return val;
 	*/
 
-	
+
 	float2 x = TargetSize * input.uv;
 	float4 World;
 	World.xyz = texture2d[x];
@@ -115,14 +116,14 @@ float4 PSSun(psInput input) : SV_Target
 	{
 		float2 sunriseLookupUV = float2((tmpDist / Radius),0.0);
 		float3 sunCol = sunGradientTexture.Sample(linearSampler,sunriseLookupUV);		
-		return float4( sunCol, 1.0 );
-		return 1.0 - (tmpDist / Radius);
+		float3 finalColor = lerp(sunCol, float3(0,0,0), 1.0-Alpha);		
+		return float4( finalColor, 1.0 );
+		//return 1.0 - (tmpDist / Radius);
 	}
 	else
 	{
 		return 0.0;		
 	}
-
 }
 
 // ----------------------------------------------------

@@ -7,29 +7,23 @@ Texture2D<float3> texture2d : PREVIOUS;
 float Radius = 1.0f;
 float Thickness = 0.1f;
 float Phase = 0.0f;
-float Alpha = 1.0f;
 float4x4 TransformInverse;
-float2 TargetSize:TARGETSIZE;
+float2 R:TARGETSIZE;
 
-Texture2D<float3> skyGradientTexture;
-
-// ----------------------------------------------------
 SamplerState linearSampler : IMMUTABLE
 {
     Filter = MIN_MAG_MIP_LINEAR;
-	//Filter = MIN_MAG_MIP_POINT;
     AddressU = Clamp;
     AddressV = Clamp;
 };
 
-// ----------------------------------------------------
 struct psInput
 {
 	float4 p : SV_Position;
 	float2 uv : TEXCOORD0;
 };
 
-// ----------------------------------------------------
+
 float4 PSSphere(psInput input) : SV_Target
 {
 	float4 World;
@@ -40,10 +34,9 @@ float4 PSSphere(psInput input) : SV_Target
 	return abs(length(World.xyz) - Radius) < Thickness;
 }
 
-// ----------------------------------------------------
 float4 PSSphereFill(psInput input) : SV_Target
 {
-	float2 x = TargetSize * input.uv;
+	float2 x = R * input.uv;
 	float4 World;
 	World.xyz = texture2d[x];
 	World.w = 1.0f;
@@ -52,10 +45,9 @@ float4 PSSphereFill(psInput input) : SV_Target
 	return length(World.xyz) < Radius;
 }
 
-// ----------------------------------------------------
 float4 PSSphereFillGradient(psInput input) : SV_Target
 {
-	float2 x = TargetSize * input.uv;
+	float2 x = R * input.uv;
 	float4 World;
 	World.xyz = texture2d[x];
 	World.w = 1.0f;
@@ -66,10 +58,9 @@ float4 PSSphereFillGradient(psInput input) : SV_Target
 	return value;
 }
 
-// ----------------------------------------------------
 float4 PSSphereFillGradientNegative(psInput input) : SV_Target
 {
-	float2 x = TargetSize * input.uv;
+	float2 x = R * input.uv;
 	float4 World;
 	World.xyz = texture2d[x];
 	World.w = 1.0f;
@@ -80,7 +71,6 @@ float4 PSSphereFillGradientNegative(psInput input) : SV_Target
 	return value;
 }
 
-// ----------------------------------------------------
 float4 PSPlane(psInput input) : SV_Target
 {
 	float4 World;
@@ -91,33 +81,29 @@ float4 PSPlane(psInput input) : SV_Target
 	return 1 - smoothstep(0.0f, Thickness, abs(length(World.y) - Radius));
 }
 
-// ----------------------------------------------------
-float4 PSSkyGradient(psInput input) : SV_Target
-{	
+float4 PSPassThrough(psInput input) : SV_Target
+{
 	float4 World;
 	World.xyz = texture2d.Sample(linearSampler,input.uv);
 	World.w = 1.0f;
-	World = mul(World, TransformInverse);
-	
-	float lookupX = smoothstep(0.0f, Thickness, abs(length(World.y) - Radius));
-	float2 sunriseLookupUV = float2(1.0-lookupX,0.0);
-	float3 sunCol = skyGradientTexture.Sample(linearSampler,sunriseLookupUV);	
-	
-	float3 finalColor = lerp(sunCol, float3(0,0,0), 1.0-Alpha);
-	
-	return float4( finalColor, 1.0 );
+	float4 Object = mul(World, TransformInverse);
+	Object /= Object.w;
+	return Object;
 }
 
-// ----------------------------------------------------
-technique10 SkyGradient
+float4 PSSphericalWave(psInput input) : SV_Target
 {
-	pass P0
-	{
-		SetPixelShader(CompileShader(ps_4_0,PSSkyGradient()));
-	}
+	float4 World;
+	World.xyz = texture2d.Sample(linearSampler,input.uv);
+	World.w = 1.0f;
+	float4 Object = mul(World, TransformInverse);
+	Object /= Object.w;
+	
+	float r = length(Object.xyz);
+	float c = sin(r);
+	return 1.0f / r;
 }
 
-// ----------------------------------------------------
 technique10 Sphere
 {
 	pass P0
@@ -126,7 +112,6 @@ technique10 Sphere
 	}
 }
 
-// ----------------------------------------------------
 technique10 SphereFill
 {
 	pass P0
@@ -135,7 +120,6 @@ technique10 SphereFill
 	}
 }
 
-// ----------------------------------------------------
 technique10 SphereFillGradient
 {
 	pass P0
@@ -144,7 +128,7 @@ technique10 SphereFillGradient
 	}
 }
 
-// ----------------------------------------------------
+
 technique10 SphereFillGradientNegative
 {
 	pass P0
@@ -153,12 +137,27 @@ technique10 SphereFillGradientNegative
 	}
 }
 
-// ----------------------------------------------------
 technique10 Plane
 {
 	pass P0
 	{
 		SetPixelShader(CompileShader(ps_4_0,PSPlane()));
+	}
+}
+
+technique10 Passthrough
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,PSPassThrough()));
+	}
+}
+
+technique10 SphericalWave
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,PSSphericalWave()));
 	}
 }
 
