@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
-   <PATCH nodename="C:\Users\Andreas\Documents\VVVV\LineOfSight\Test10 - Perlin Noise Volume Test\main.v4p" systemname="main" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\main.v4p">
+   <PATCH nodename="C:\Users\Andreas\Documents\VVVV\LineOfSight\Test11 - Perlin Noise Volume Paletted\main.v4p" systemname="main" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\main.v4p">
    <BOUNDS type="Window" left="0" top="0" width="15525" height="11760">
    </BOUNDS>
    <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="0">
@@ -472,28 +472,28 @@
    <BOUNDS type="Node" left="29625" top="10335" width="100" height="100">
    </BOUNDS>
    </NODE>
-   <NODE systemname="PerlinNoiseVolume" filename="..\Layers\PerlinNoiseVolume.v4p" nodename="..\Layers\PerlinNoiseVolume.v4p" componentmode="InAWindow" id="126">
-   <BOUNDS type="Node" left="16920" top="10140" width="3720" height="270">
+   <NODE systemname="PerlinNoiseVolumePaletted" filename="..\Layers\PerlinNoiseVolumePaletted.v4p" nodename="..\Layers\PerlinNoiseVolumePaletted.v4p" componentmode="InAWindow" id="127">
+   <BOUNDS type="Node" left="16950" top="9465" width="3420" height="270">
    </BOUNDS>
-   <PIN pinname="Room Scale" visible="1">
-   </PIN>
+   <BOUNDS type="Window" left="1350" top="1770" width="15495" height="7620">
+   </BOUNDS>
    <PIN pinname="World Texture" visible="1">
    </PIN>
-   <PIN pinname="OSC Input" visible="1">
+   <PIN pinname="Room Scale" visible="1">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <BOUNDS type="Window" left="1035" top="375" width="15495" height="9360">
-   </BOUNDS>
+   <PIN pinname="OSC Input" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="45" srcpinname="Y Output Value" dstnodeid="126" dstpinname="Room Scale">
+   <LINK srcnodeid="40" srcpinname="StartEnd TextureXYZ" dstnodeid="127" dstpinname="World Texture">
    </LINK>
-   <LINK srcnodeid="40" srcpinname="StartEnd TextureXYZ" dstnodeid="126" dstpinname="World Texture">
+   <LINK srcnodeid="45" srcpinname="Y Output Value" dstnodeid="127" dstpinname="Room Scale">
    </LINK>
-   <LINK srcnodeid="94" srcpinname="Output" dstnodeid="126" dstpinname="OSC Input">
+   <LINK srcnodeid="127" srcpinname="Texture Out" dstnodeid="65" dstpinname="Texture">
    </LINK>
-   <LINK srcnodeid="126" srcpinname="Texture Out" dstnodeid="77" dstpinname="Texture In">
+   <LINK srcnodeid="127" srcpinname="Texture Out" dstnodeid="77" dstpinname="Texture In">
    </LINK>
-   <LINK srcnodeid="126" srcpinname="Texture Out" dstnodeid="65" dstpinname="Texture">
+   <LINK srcnodeid="94" srcpinname="Output" dstnodeid="127" dstpinname="OSC Input">
    </LINK>
    </PATCH>
