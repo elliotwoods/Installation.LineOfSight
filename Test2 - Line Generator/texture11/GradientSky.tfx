@@ -7,16 +7,17 @@ Texture2D<float3> texture2d : PREVIOUS;
 float Radius = 1.0f;
 float Thickness = 0.1f;
 float Phase = 0.0f;
+float Alpha = 1.0f;
 float4x4 TransformInverse;
 float2 TargetSize:TARGETSIZE;
-Texture2D<float3> sunGradientTexture;
+
 Texture2D<float3> skyGradientTexture;
 
 // ----------------------------------------------------
 SamplerState linearSampler : IMMUTABLE
 {
-    //Filter = MIN_MAG_MIP_LINEAR;
-	Filter = MIN_MAG_MIP_POINT;
+    Filter = MIN_MAG_MIP_LINEAR;
+	//Filter = MIN_MAG_MIP_POINT;
     AddressU = Clamp;
     AddressV = Clamp;
 };
@@ -91,47 +92,28 @@ float4 PSPlane(psInput input) : SV_Target
 }
 
 // ----------------------------------------------------
-float4 PSSunrise(psInput input) : SV_Target
-{
-	/*
-	float val = PSSphereFillGradient(input).x;
-	//val = smoothstep( 0.0, 0.4, val );
-	float2 sunriseLookupUV = float2(1.0-val,0);
-	//sunriseLookupUV.x = cloamp( sunriseLookupUV.x, 0.0, 0.99 );
-	float3 sunCol = sunGradientTexture.Sample(linearSampler,sunriseLookupUV);
-	return float4( sunCol, 1.0 );
-	//return val;
-	*/
-
-	
-	float2 x = TargetSize * input.uv;
+float4 PSSkyGradient(psInput input) : SV_Target
+{	
 	float4 World;
-	World.xyz = texture2d[x];
+	World.xyz = texture2d.Sample(linearSampler,input.uv);
 	World.w = 1.0f;
 	World = mul(World, TransformInverse);
 	
-	float tmpDist = length(World.xyz);
-	
-	if( tmpDist <= Radius )
-	{
-		float2 sunriseLookupUV = float2((tmpDist / Radius),0.0);
-		float3 sunCol = sunGradientTexture.Sample(linearSampler,sunriseLookupUV);		
-		return float4( sunCol, 1.0 );
-		return 1.0 - (tmpDist / Radius);
-	}
-	else
-	{
-		return 0.0;		
-	}
+	float lookupX = smoothstep(0.0f, Thickness, abs(length(World.y) - Radius));
+	float2 sunriseLookupUV = float2(lookupX,0.0);
+	float3 sunCol = skyGradientTexture.Sample(linearSampler,sunriseLookupUV);		
+	float3 finalColor = lerp(sunCol, float3(0,0,0), 1.0-Alpha);
 
+	
+	return float4( finalColor, 1.0 );
 }
 
 // ----------------------------------------------------
-technique10 Sun
+technique10 SkyGradient
 {
 	pass P0
 	{
-		SetPixelShader(CompileShader(ps_4_0,PSSunrise()));
+		SetPixelShader(CompileShader(ps_4_0,PSSkyGradient()));
 	}
 }
 
