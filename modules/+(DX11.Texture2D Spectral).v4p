@@ -1,0 +1,147 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
+   <PATCH nodename="C:\Users\Andreas\Documents\VVVV\LineOfSight\modules\+(DX11.Texture2D Spectral).v4p" systemname="+ (DX11.Texture2D Spectral)" filename="C:\Users\elliot\Desktop\Line Of Sight\modules\+(DX11.Texture2D Spectral).v4p">
+   <BOUNDS type="Window" left="14820" top="8295" width="9000" height="8490">
+   </BOUNDS>
+   <NODE systemname="IOBox (Node)" nodename="IOBox (Node)" componentmode="InABox" id="0">
+   <BOUNDS type="Node" left="2175" top="765" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2175" top="765" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Input">
+   </PIN>
+   </NODE>
+   <NODE systemname="Constant (DX11.Effect)" filename="%VVVV%\packs\DX11\nodes\dx11\Constant.fx" nodename="Constant (DX11.Effect)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="1050" top="3285" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Geometry" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Output Node" dstnodeid="1" dstpinname="Texture">
+   </LINK>
+   <NODE systemname="Renderer (DX11 TempTarget)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TempTarget)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="900" top="4950" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Texture SizeXY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Layer" dstnodeid="2" dstpinname="Layer">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="3" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="2070" top="5835" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2070" top="5835" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Output">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Buffers" dstnodeid="3" dstpinname="Input Node">
+   </LINK>
+   <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="2880" top="3270" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Output Node" dstnodeid="5" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="2205" y="2138">
+   </LINKPOINT>
+   <LINKPOINT x="2895" y="2138">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Info (DX11.Texture 2d)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Info (DX11.Texture 2d)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="2880" top="3765" width="5025" height="270">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Width" visible="1">
+   </PIN>
+   <PIN pinname="Height" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="6" dstpinname="Texture In">
+   </LINK>
+   <NODE systemname="Vector (2d Join)" nodename="Vector (2d Join)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="2895" top="4245" width="735" height="270">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Width" dstnodeid="7" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Height" dstnodeid="7" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="XY" dstnodeid="2" dstpinname="Texture SizeXY" linkstyle="Bezier">
+   <LINKPOINT x="2895" y="4718">
+   </LINKPOINT>
+   <LINKPOINT x="2205" y="4718">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="8" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="3405" top="765" width="2160" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3405" top="765" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" values="R32G32B32A32_Float">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Target Format|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Output Enum" dstnodeid="2" dstpinname="Target Format" linkstyle="Bezier">
+   <LINKPOINT x="3405" y="2978">
+   </LINKPOINT>
+   <LINKPOINT x="945" y="2978">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="1050" top="1530" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Render State" dstnodeid="1" dstpinname="Render State">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="10" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="5745" top="765" width="1590" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5745" top="765" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" values="Add">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Mode">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Output Enum" dstnodeid="9" dstpinname="Mode" linkstyle="VHV">
+   <LINKPOINT x="5745" y="1253">
+   </LINKPOINT>
+   <LINKPOINT x="1560" y="1253">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Grid (DX11.Geometry)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Grid (DX11.Geometry)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="1215" top="2760" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <PIN pinname="SizeXY" slicecount="2" values="2,2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Geometry Out" dstnodeid="1" dstpinname="Geometry">
+   </LINK>
+   </PATCH>

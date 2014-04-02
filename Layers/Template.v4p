@@ -1,0 +1,191 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
+   <PATCH nodename="C:\Users\Andreas\Documents\VVVV\LineOfSight\Layers\Template.v4p" systemname="Template" filename="C:\Users\Andreas\Documents\VVVV\LineOfSight\Layers\Template.v4p">
+   <BOUNDS type="Window" left="7575" top="3915" width="11385" height="7815">
+   </BOUNDS>
+   <NODE systemname="Inverse (Transform)" nodename="Inverse (Transform)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="4515" top="5310" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="SelectVolume (DX11.TextureFX)" filename="..\Test6 - Receive Transform\texture11\SelectVolume.tfx" nodename="SelectVolume (DX11.TextureFX)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="330" top="7770" width="6390" height="270">
+   </BOUNDS>
+   <PIN pinname="Technique" visible="1" slicecount="1" values="Sphere">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Transform Out" dstnodeid="8" dstpinname="TransformInverse">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="5" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="1380" top="4530" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1380" top="4530" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Radius">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Radius">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="4" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="2445" top="4530" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2445" top="4530" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.100000001490116">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Thickness">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Thickness">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="3" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="5625" top="5670" width="1785" height="1860">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5625" top="5670" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" values="SphereFill">
+   </PIN>
+   <PIN pinname="Style" slicecount="1" values="List">
+   </PIN>
+   <PIN pinname="Output Enum" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="14" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="360" top="9930" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="360" top="9930" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Texture Out|">
+   </PIN>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="16" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="1425" top="3780" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1425" top="3780" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.91">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Y Input Value">
+   <LINKPOINT x="1425" y="4041">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="17" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="345" top="2865" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="345" top="2865" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|World Texture|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Output Node" dstnodeid="8" dstpinname="Texture In">
+   </LINK>
+   <NODE systemname="Transform (OSC)" filename="..\Common\Transform (OSC).v4p" nodename="..\Common\Transform (OSC).v4p" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="5040" top="4320" width="1920" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="0" top="2880" width="11550" height="8505">
+   </BOUNDS>
+   <BOUNDS type="Window" left="3900" top="1410" width="11550" height="9660">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Room Scale" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Transform Out" dstnodeid="12" dstpinname="Source">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Output Enum" dstnodeid="8" dstpinname="Technique">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="19" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="5055" top="1965" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5055" top="1965" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|OSC Input|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Output Node" dstnodeid="18" dstpinname="OSC Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="20" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5985" top="1950" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5985" top="1950" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" values="0,0,0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Room Scale|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Room Scale">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="22" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6915" top="3630" width="795" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6915" top="3630" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="2" values="0,1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|0, 0|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Object Index">
+   </LINK>
+   <NODE systemname="+(DX11.Texture2D Spectral)" filename="..\modules\+(DX11.Texture2D Spectral).v4p" nodename="..\modules\+(DX11.Texture2D Spectral).v4p" componentmode="InABox" id="23">
+   <BOUNDS type="Node" left="330" top="8685" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Target Format" slicecount="1" values="R32G32B32A32_Float">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Texture Out" dstnodeid="23" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="14" dstpinname="Input Node">
+   </LINK>
+   </PATCH>
