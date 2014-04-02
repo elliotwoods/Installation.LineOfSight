@@ -303,7 +303,7 @@ float4 PSPerlinNoiseVolume(psInput input) : SV_Target
 		perlinVal = step( perlinVal, Threshold );
 	}
 	
-	perlinVal = lerp( perlinVal, 0.0)
+	perlinVal = lerp( perlinVal, 0.0, 1.0-Alpha );
 	
 	return perlinVal;
 }
