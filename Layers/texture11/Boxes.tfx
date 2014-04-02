@@ -1,0 +1,57 @@
+//@author: elliotwoods
+//@help: select a volume (still doing this old trick?)
+//@tags: texture
+//@credits: 
+
+Texture2D<float3> texture2d : PREVIOUS;
+float4x4 TransformInverse;
+float2 R:TARGETSIZE;
+
+Texture2D<float3> colorTexture;
+
+SamplerState linearSampler : IMMUTABLE
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+struct psInput
+{
+	float4 p : SV_Position;
+	float2 uv : TEXCOORD0;
+};
+
+// -------------------------------------------------------------
+float stepInOut( float _edge1, float _edge2, float _val ) { return step(_edge1, _val) - step(_edge2,_val); }
+float smoothStepInOut( float _low0, float _high0, float _high1, float _low1, float _t ) { return smoothstep( _low0, _high0, _t ) * (1.0 - smoothstep( _high1, _low1, _t ));}
+float rand(float2 co) { return frac(sin(dot(co.xy ,float2(12.9898,78.233))) * 43758.5453); }
+float map( float value, float inputMin, float inputMax, float outputMin, float outputMax ) { return ((value - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin); }
+float mapClamped( float value, float inputMin, float inputMax, float outputMin, float outputMax ) { return clamp( ((value - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin),    outputMin, outputMax ); }
+
+
+// -------------------------------------------------------------
+
+float4 PSBox(psInput input) : SV_Target
+{
+	float4 World;
+	World.xyz = texture2d.Sample(linearSampler,input.uv);
+	World.w = 1.0f;
+	World = mul(World, TransformInverse);
+	
+	return stepInOut( -0.5, 0.5, World.x ) *
+	       stepInOut( -0.5, 0.5, World.y ) *
+	       stepInOut( -0.5, 0.5, World.z );
+	
+}
+
+// -------------------------------------------------------------
+
+technique10 Box
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,PSBox()));
+	}
+}
+

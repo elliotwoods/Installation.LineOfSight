@@ -24,17 +24,6 @@ struct psInput
 };
 
 
-float stepInOut( float _edge1, float _edge2, float _val )
-{
-	return step(_edge1, _val) - step(_edge2,_val);
-}
-
-float smoothStepInOut( float _low0, float _high0, float _high1, float _low1, float _t )
-{
-	return smoothstep( _low0, _high0, _t ) * (1.0 - smoothstep( _high1, _low1, _t ));
-}
-
-
 float4 PSSphere(psInput input) : SV_Target
 {
 	float4 World;
@@ -92,22 +81,6 @@ float4 PSPlane(psInput input) : SV_Target
 	return 1 - smoothstep(0.0f, Thickness, abs(length(World.y) - Radius));
 }
 
-
-float4 PSBox(psInput input) : SV_Target
-{
-	float4 World;
-	World.xyz = texture2d.Sample(linearSampler,input.uv);
-	World.w = 1.0f;
-	World = mul(World, TransformInverse);
-	
-	//return 1 - smoothstep(0.0f, Thickness, abs(length(World.y) - Radius));
-	return stepInOut( -0.5, 0.5, World.x ) *
-	       stepInOut( -0.5, 0.5, World.y ) *
-	       stepInOut( -0.5, 0.5, World.z );
-	
-}
-
-
 float4 PSPassThrough(psInput input) : SV_Target
 {
 	float4 World;
@@ -130,15 +103,6 @@ float4 PSSphericalWave(psInput input) : SV_Target
 	float c = sin(r);
 	return 1.0f / r;
 }
-
-technique10 Box
-{
-	pass P0
-	{
-		SetPixelShader(CompileShader(ps_4_0,PSBox()));
-	}
-}
-
 
 technique10 Sphere
 {
