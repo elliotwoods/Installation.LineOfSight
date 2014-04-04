@@ -99,13 +99,19 @@ float4 PSSkyGradient(psInput input) : SV_Target
 	World.w = 1.0f;
 	World = mul(World, TransformInverse);
 	
-	float lookupX = smoothstep(0.0f, Thickness, abs(length(World.y) - Radius));
+	float lookupX = abs(length(World.y) - Radius) / Thickness;
 	float2 sunriseLookupUV = float2(1.0-lookupX,0.0);
 	float3 sunCol = skyGradientTexture.Sample(linearSampler,sunriseLookupUV);	
 	
 	float3 finalColor = lerp(sunCol, float3(0,0,0), 1.0-Alpha);
 	
-	return float4( finalColor, 1.0 );
+	float4 debug;
+	debug.xyz = 0.0f;
+	debug.w = 1.0f;
+	
+	debug.xy = sunriseLookupUV;//sunriseLookupUV.x;
+
+	return debug;//float4( finalColor, 1.0 );
 }
 
 // ----------------------------------------------------

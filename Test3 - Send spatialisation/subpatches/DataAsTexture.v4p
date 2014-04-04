@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
-   <PATCH nodename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\subpatches\DataAsTexture.v4p" systemname="DataAsTexture" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\subpatches\DataAsTexture.v4p">
+   <PATCH nodename="C:\openFrameworks\apps\Installation.LineOfSight\Test3 - Send spatialisation\subpatches\DataAsTexture.v4p" systemname="DataAsTexture" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\subpatches\DataAsTexture.v4p">
    <BOUNDS type="Window" left="8550" top="1800" width="8115" height="14130">
    </BOUNDS>
    <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InABox" id="0">
@@ -269,7 +269,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1050" top="4755" width="3430" height="4165">
    </BOUNDS>
-   <BOUNDS type="Window" left="14205" top="10425" width="7335" height="5025">
+   <BOUNDS type="Window" left="4140" top="3540" width="7335" height="5025">
    </BOUNDS>
    <PIN pinname="Buffers" visible="1">
    </PIN>

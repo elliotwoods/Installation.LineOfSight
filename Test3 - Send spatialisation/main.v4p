@@ -1,13 +1,13 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
-   <PATCH nodename="C:\Users\elliot\Desktop\Line Of Sight\Test3 - Send spatialisation\main.v4p" systemname="main" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\main.v4p">
-   <BOUNDS type="Window" left="0" top="0" width="14400" height="17400">
+   <PATCH nodename="C:\openFrameworks\apps\Installation.LineOfSight\Test3 - Send spatialisation\main.v4p" systemname="main" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\main.v4p">
+   <BOUNDS type="Window" left="-480" top="2820" width="14400" height="16380">
    </BOUNDS>
-   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="0">
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="0" stayontop="1" border="0">
    <BOUNDS type="Node" left="300" top="15480" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="300" top="15480" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="14355" top="0" width="14445" height="17400">
+   <BOUNDS type="Window" left="12315" top="5985" width="8085" height="10395">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -645,7 +645,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="25395" top="14205" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" values="192.168.0.2">
+   <PIN pinname="Input String" slicecount="1" values="192.168.1.143">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="127.0.0.1">
    </PIN>
@@ -803,19 +803,21 @@
    </PIN>
    <PIN pinname="Radius" visible="1" slicecount="1" values="1.11">
    </PIN>
-   <BOUNDS type="Window" left="14505" top="8625" width="13350" height="9120">
+   <BOUNDS type="Window" left="1725" top="720" width="13350" height="9120">
    </BOUNDS>
+   <PIN pinname="LiveOSC Connection" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="136" srcpinname="Output Node" dstnodeid="149" dstpinname="RoomTransform">
    </LINK>
    <LINK srcnodeid="68" srcpinname="Transform Out" dstnodeid="149" dstpinname="ObjectInverseTransform">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="150" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="20400" top="10800" width="795" height="240">
+   <BOUNDS type="Box" left="20085" top="10815" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="20400" top="10800" width="0" height="0">
+   <BOUNDS type="Node" left="20085" top="10815" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" values="0.3">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -863,5 +865,65 @@
    <LINK srcnodeid="156" srcpinname="Y Output Value" dstnodeid="79" dstpinname="Radius">
    </LINK>
    <LINK srcnodeid="156" srcpinname="Y Output Value" dstnodeid="149" dstpinname="Radius">
+   </LINK>
+   <NODE systemname="Connect (LiveOSC)" filename="..\..\Installation.LineSegmentsSpace\32. Send Audio Control Test\plugins\LiveOSCConnect\LiveOSCConnect.csproj" nodename="Connect (LiveOSC)" componentmode="Hidden" id="159">
+   <BOUNDS type="Node" left="20415" top="8310" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Connection" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="159" srcpinname="Connection" dstnodeid="149" dstpinname="LiveOSC Connection">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="160" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="21255" top="8790" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="21255" top="8790" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="159" srcpinname="Status" dstnodeid="160" dstpinname="Input String">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="161" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="21225" top="7650" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="21225" top="7650" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="161" srcpinname="Y Output Value" dstnodeid="159" dstpinname="Connect">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="162" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="20400" top="7350" width="1680" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="20400" top="7350" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="192.168.1.143">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="162" srcpinname="Output String" dstnodeid="159" dstpinname="IP Address">
+   </LINK>
+   <LINK srcnodeid="105" srcpinname="XYZ" dstnodeid="69" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

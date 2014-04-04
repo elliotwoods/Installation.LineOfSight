@@ -41,7 +41,7 @@ float PS(psInput input) : SV_Target
 	PosObject /= PosObject.w;
 	
 	float sourceToSpeaker = length(PosObject.xyz);
-	return pow(Radius / sourceToSpeaker, 2) * Level;
+	return Radius / sourceToSpeaker * Level;
 }
 
 technique10 Process

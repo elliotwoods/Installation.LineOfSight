@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
-   <PATCH nodename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\subpatches\Room (DX11).v4p" systemname="Room (DX11)" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\subpatches\Room (DX11).v4p">
-   <BOUNDS type="Window" left="5250" top="11040" width="6105" height="5130">
+   <PATCH nodename="C:\openFrameworks\apps\Installation.LineOfSight\Common\Room (DX11).v4p" systemname="Room (DX11)" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\subpatches\Room (DX11).v4p">
+   <BOUNDS type="Window" left="2235" top="8685" width="17745" height="6915">
    </BOUNDS>
    <NODE systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="1650" top="1845" width="100" height="100">
@@ -63,14 +63,14 @@
    </PIN>
    <PIN pinname="Layer Out" visible="1">
    </PIN>
-   <PIN pinname="Layer 2" visible="1">
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="1" srcpinname="Layer" dstnodeid="5" dstpinname="Layer 1">
    </LINK>
    <LINK srcnodeid="5" srcpinname="Layer Out" dstnodeid="4" dstpinname="Input Node">
    </LINK>
-   <NODE systemname="Axis (DX11.Layer)" filename="modules\Axis (DX11.Layer).v4p" componentmode="Hidden" id="6" nodename="modules\Axis (DX11.Layer).v4p">
+   <NODE systemname="Axis (DX11.Layer)" filename="..\modules\Axis (DX11.Layer).v4p" componentmode="Hidden" id="6" nodename="Axis (DX11.Layer)">
    <BOUNDS type="Node" left="1695" top="2940" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="1695" top="2940" width="4800" height="3600">

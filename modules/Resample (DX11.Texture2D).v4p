@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
-   <PATCH nodename="C:\openFrameworks\apps\Installation.LineOfSight\Test3 - Send spatialisation\modules\Resample (DX11.Texture2D).v4p" systemname="Resample (DX11.Texture2D)" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\modules\Resample (DX11.Texture2D).v4p">
+   <PATCH nodename="C:\openFrameworks\apps\Installation.LineOfSight\modules\Resample (DX11.Texture2D).v4p" systemname="Resample (DX11.Texture2D)" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\modules\Resample (DX11.Texture2D).v4p">
    <NODE systemname="Quad (DX11.Layer)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Quad (DX11.Layer)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="1665" top="2475" width="100" height="100">
    </BOUNDS>
@@ -9,11 +9,11 @@
    </PIN>
    <PIN pinname="Texture" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Texture In" visible="1">
-   </PIN>
    <PIN pinname="Transform In" visible="1">
    </PIN>
    <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <NODE systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" id="1">
@@ -39,10 +39,12 @@
    <NODE id="3" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Texture SizeXY|">
    </PIN>
-   <BOUNDS type="Box" left="1500" top="500" width="750" height="240">
+   <BOUNDS type="Box" left="1500" top="500" width="750" height="495">
    </BOUNDS>
    <BOUNDS type="Node" left="1500" top="500" width="750" height="240">
    </BOUNDS>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
    </NODE>
    <LINK srcnodeid="3" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Texture SizeXY">
    </LINK>
@@ -70,7 +72,7 @@
    </NODE>
    <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="0" dstpinname="Texture">
    </LINK>
-   <BOUNDS type="Window" left="4140" top="3540" width="7335" height="5025">
+   <BOUNDS type="Window" left="14205" top="10425" width="7335" height="5025">
    </BOUNDS>
    <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="6">
    <BOUNDS type="Node" left="1830" top="1515" width="100" height="100">
@@ -96,10 +98,10 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="0" dstpinname="Texture In">
-   </LINK>
    <LINK srcnodeid="1" srcpinname="Transform Out" dstnodeid="0" dstpinname="Transform In">
    </LINK>
    <LINK srcnodeid="0" srcpinname="Layer Out" dstnodeid="2" dstpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="0" dstpinname="Texture In">
    </LINK>
    </PATCH>
