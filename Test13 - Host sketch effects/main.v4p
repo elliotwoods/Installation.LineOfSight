@@ -327,7 +327,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="14520" top="6270" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="2.57">
+   <PIN pinname="Y Input Value" slicecount="1" values="1.22">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -604,6 +604,6 @@
    </LINK>
    <LINK srcnodeid="133" srcpinname="Transform Out" dstnodeid="42" dstpinname="Room Transform">
    </LINK>
-   <LINK srcnodeid="124" srcpinname="Output" dstnodeid="125" dstpinname="Input Node">
+   <LINK srcnodeid="127" srcpinname="Texture Out" dstnodeid="125" dstpinname="Input Node">
    </LINK>
    </PATCH>
