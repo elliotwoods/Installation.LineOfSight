@@ -1,13 +1,13 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
-   <PATCH nodename="C:\openFrameworks\apps\Installation.LineSegmentsSpace\23. Calibrate Camera to room markers\subpatches\Modified Marker Set Renderers (DX11).v4p" systemname="Modified Marker Set Renderers (DX11)" filename="C:\kimchiandchips\Installations\VVVV.Patches.DaVinci13\23. Calibrate Camera to room markers\subpatches\Modified Marker Set Renderers (DX11).v4p">
+   <PATCH nodename="C:\openFrameworks\apps\Installation.LineOfSight\Tool 3 - Calibrate Camera to room markers\subpatches\Modified Marker Set Renderers (DX11).v4p" systemname="Modified Marker Set Renderers (DX11)" filename="C:\kimchiandchips\Installations\VVVV.Patches.DaVinci13\23. Calibrate Camera to room markers\subpatches\Modified Marker Set Renderers (DX11).v4p">
    <BOUNDS type="Window" left="1995" top="3600" width="16425" height="11340">
    </BOUNDS>
-   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="35" border="0" stayontop="0">
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="35" border="1" stayontop="0">
    <BOUNDS type="Node" left="1830" top="5900" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="1830" top="5900" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="17985" top="0" width="18015" height="11700">
+   <BOUNDS type="Window" left="1350" top="0" width="17145" height="11760">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -18,6 +18,8 @@
    <PIN pinname="Back Buffer Format" slicecount="1" values="R8G8B8A8_UNorm">
    </PIN>
    <PIN pinname="Mouse State" visible="1">
+   </PIN>
+   <PIN pinname="Show Cursor" slicecount="1" values="1">
    </PIN>
    </NODE>
    <NODE systemname="QUAD (DX11.LAYER)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Quad (DX11.Layer)" componentmode="Hidden" id="34">
@@ -65,7 +67,7 @@
    </PIN>
    <PIN pinname="Enabled" visible="-1" pintype="Input" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Layer 3" visible="1">
+   <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Layer 4" visible="1" slicecount="1" values="||">
    </PIN>
@@ -97,7 +99,7 @@
    <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="30">
    <BOUNDS type="Node" left="6060" top="4805" width="2265" height="270">
    </BOUNDS>
-   <PIN pinname="Input Node" visible="1">
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Index" visible="1">
    </PIN>
@@ -109,7 +111,7 @@
    </BOUNDS>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
-   <PIN pinname="Source" visible="1">
+   <PIN pinname="Source" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="29" srcpinname="Transform Out" dstnodeid="31" dstpinname="View">
@@ -145,7 +147,7 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Input 2" visible="1">
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Input Count" slicecount="1" values="3">
    </PIN>
@@ -153,44 +155,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="19" srcpinname="Output" dstnodeid="20" dstpinname="Set">
-   </LINK>
-   <NODE systemname="Cursor (DX11 2D)" filename="..\..\21. Site survey\subpatches\Cursor (DX11 2D).v4p" nodename="subpatches\Cursor (DX11 2D).v4p" componentmode="Hidden" id="15">
-   <BOUNDS type="Node" left="9200" top="3942" width="1545" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="6368" top="2400" width="5665" height="6090">
-   </BOUNDS>
-   <BOUNDS type="Window" left="19385" top="19012" width="5665" height="6090">
-   </BOUNDS>
-   <PIN pinname="Layer Out" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Enabled" visible="1">
-   </PIN>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="15" srcpinname="Layer Out" dstnodeid="32" dstpinname="Layer 4">
-   </LINK>
-   <NODE systemname="Markers (DX11 2D)" filename="..\..\21. Site survey\subpatches\Markers (DX11 2D).v4p" nodename="subpatches\Markers (DX11 2D).v4p" componentmode="Hidden" id="14">
-   <BOUNDS type="Node" left="6795" top="2925" width="4500" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="6795" top="2925" width="8115" height="7365">
-   </BOUNDS>
-   <BOUNDS type="Window" left="-1050" top="16875" width="8115" height="9540">
-   </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Spread Count" visible="1">
-   </PIN>
-   <PIN pinname="Input XY" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="14" srcpinname="Layer Out" dstnodeid="32" dstpinname="Layer 3">
-   </LINK>
-   <LINK srcnodeid="14" srcpinname="Transform Out" dstnodeid="30" dstpinname="Input Node" linkstyle="Bezier">
-   <LINKPOINT x="9735" y="3983">
-   </LINKPOINT>
-   <LINKPOINT x="6120" y="3983">
-   </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="36" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="8280" top="315" width="795" height="240">
@@ -210,8 +174,6 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="36" srcpinname="Y Output Value" dstnodeid="14" dstpinname="Selection Index">
-   </LINK>
    <NODE systemname="Unzip (Value Bin)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Unzip (Value Bin)" componentmode="Hidden" id="41">
    <BOUNDS type="Node" left="6810" top="2025" width="1230" height="270">
    </BOUNDS>
@@ -310,8 +272,6 @@
    <LINKPOINT x="4965" y="4118">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="46" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Enabled">
-   </LINK>
    <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="47">
    <BOUNDS type="Node" left="1980" top="3045" width="100" height="100">
    </BOUNDS>
@@ -319,28 +279,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="47" srcpinname="Render State" dstnodeid="34" dstpinname="Render State">
-   </LINK>
-   <NODE systemname="FineMouseMovementOnDrag (MouseState 2D)" filename="..\..\21. Site survey\subpatches\Marker Set Renderers\FineMouseMovementOnDrag (MouseState 2D).v4p" nodename="FineMouseMovementOnDrag (MouseState 2D)" componentmode="Hidden" id="61">
-   <BOUNDS type="Node" left="1845" top="6645" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Output XY" visible="1">
-   </PIN>
-   <PIN pinname="Mouse 1" visible="1">
-   </PIN>
-   <PIN pinname="Mouse" visible="1">
-   </PIN>
-   <PIN pinname="Raw XY" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="61" srcpinname="Mouse 1" dstnodeid="19" dstpinname="Input 2">
-   </LINK>
-   <LINK srcnodeid="35" srcpinname="Mouse State" dstnodeid="61" dstpinname="Mouse">
-   </LINK>
-   <LINK srcnodeid="61" srcpinname="Raw XY" dstnodeid="15" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="3000" y="5065">
-   </LINKPOINT>
-   <LINKPOINT x="9195" y="5765">
-   </LINKPOINT>
    </LINK>
    <NODE systemname="Text (DX11.Layer)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.Text.dll" nodename="Text (DX11.Layer)" componentmode="Hidden" id="64">
    <BOUNDS type="Node" left="11625" top="3975" width="100" height="100">
@@ -446,8 +384,6 @@
    </NODE>
    <LINK srcnodeid="74" srcpinname="Y Output Value" dstnodeid="19" dstpinname="Input 1">
    </LINK>
-   <LINK srcnodeid="41" srcpinname="Output 2" dstnodeid="14" dstpinname="Input XY">
-   </LINK>
    <LINK srcnodeid="41" srcpinname="Output 2" dstnodeid="72" dstpinname="Input 1">
    </LINK>
    <NODE systemname="Zip (Value Bin)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Zip (Value Bin)" componentmode="Hidden" id="75">
@@ -459,12 +395,10 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Input 2" visible="1">
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="75" srcpinname="Output" dstnodeid="20" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="61" srcpinname="Output XY" dstnodeid="75" dstpinname="Input 2">
    </LINK>
    <LINK srcnodeid="41" srcpinname="Output 1" dstnodeid="71" dstpinname="Input">
    </LINK>
@@ -489,5 +423,73 @@
    <LINK srcnodeid="33" srcpinname="Transform Out" dstnodeid="34" dstpinname="Transform In">
    </LINK>
    <LINK srcnodeid="44" srcpinname="Output Node" dstnodeid="34" dstpinname="Texture In">
+   </LINK>
+   <NODE systemname="Cursor (DX11 2D)" filename="..\..\Tool 2 - Survey room markers\subpatches\Cursor (DX11 2D).v4p" nodename="Cursor (DX11 2D)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="9200" top="3942" width="1545" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6368" top="2400" width="5665" height="6090">
+   </BOUNDS>
+   <BOUNDS type="Window" left="19385" top="19012" width="5665" height="6090">
+   </BOUNDS>
+   <PIN pinname="Layer Out" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="2" values="0,0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Layer Out" dstnodeid="32" dstpinname="Layer 4">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="Markers (DX11 2D)" filename="..\..\Tool 2 - Survey room markers\subpatches\Markers (DX11 2D).v4p" nodename="Markers (DX11 2D)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="6795" top="2925" width="4500" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6795" top="2925" width="8115" height="7365">
+   </BOUNDS>
+   <BOUNDS type="Window" left="-1050" top="16875" width="8115" height="9540">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" visible="1">
+   </PIN>
+   <PIN pinname="Input XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Layer Out" dstnodeid="32" dstpinname="Layer 3">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Transform Out" dstnodeid="30" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="9735" y="3983">
+   </LINKPOINT>
+   <LINKPOINT x="6120" y="3983">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="36" srcpinname="Y Output Value" dstnodeid="14" dstpinname="Selection Index">
+   </LINK>
+   <LINK srcnodeid="41" srcpinname="Output 2" dstnodeid="14" dstpinname="Input XY">
+   </LINK>
+   <NODE systemname="FineMouseMovementOnDrag (MouseState 2D)" filename="..\..\Tool 2 - Survey room markers\subpatches\Marker Set Renderers\FineMouseMovementOnDrag (MouseState 2D).v4p" nodename="FineMouseMovementOnDrag (MouseState 2D)" componentmode="Hidden" id="61">
+   <BOUNDS type="Node" left="1845" top="6645" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output XY" visible="1">
+   </PIN>
+   <PIN pinname="Mouse 1" visible="1">
+   </PIN>
+   <PIN pinname="Mouse" visible="1">
+   </PIN>
+   <PIN pinname="Raw XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="61" srcpinname="Mouse 1" dstnodeid="19" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Mouse State" dstnodeid="61" dstpinname="Mouse">
+   </LINK>
+   <LINK srcnodeid="61" srcpinname="Output XY" dstnodeid="75" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="61" srcpinname="Raw XY" dstnodeid="15" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3000" y="5065">
+   </LINKPOINT>
+   <LINKPOINT x="9195" y="5765">
+   </LINKPOINT>
    </LINK>
    </PATCH>

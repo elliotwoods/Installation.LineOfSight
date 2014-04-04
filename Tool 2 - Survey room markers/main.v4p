@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
    <PATCH nodename="C:\openFrameworks\apps\Installation.LineOfSight\Tool 2 - Survey room markers\main.v4p" systemname="main" filename="C:\kimchiandchips\Installations\VVVV.Patches.DaVinci13\21. Site survey\main.v4p">
-   <BOUNDS type="Window" left="0" top="0" width="15165" height="14085">
+   <BOUNDS type="Window" left="9645" top="690" width="15165" height="14085">
    </BOUNDS>
    <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="3">
    <BOUNDS type="Node" left="7875" top="3225" width="100" height="100">
@@ -496,4 +496,34 @@
    </LINK>
    <LINK srcnodeid="85" srcpinname="Transform Out" dstnodeid="59" dstpinname="Transform In">
    </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="89" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="9975" top="8565" width="2115" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9975" top="8565" width="2115" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|mac keyboard width = 18.5&quot;|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="90">
+   <BOUNDS type="Node" left="12255" top="8580" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="12255" top="8580" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.4699">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="91">
+   <BOUNDS type="Node" left="12495" top="8850" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="12495" top="8850" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.9398">
+   </PIN>
+   </NODE>
    </PATCH>

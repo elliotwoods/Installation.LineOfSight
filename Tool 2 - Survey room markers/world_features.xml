@@ -1,8 +1,8 @@
 <?xml version="1.0" standalone="yes"?>
 <DocumentElement>
   <SpreadTable>
-    <Preview_x0020_X>-0.88923076923076916</Preview_x0020_X>
-    <_x0020_Preview_x0020_Y>-0.26880616174582805</_x0020_Preview_x0020_Y>
+    <Preview_x0020_X>-0.89328063241106714</Preview_x0020_X>
+    <_x0020_Preview_x0020_Y>-0.27030625832223709</_x0020_Preview_x0020_Y>
     <_x0020_World_x0020_X>0</_x0020_World_x0020_X>
     <_x0020_World_x0020_Y>0.95</_x0020_World_x0020_Y>
     <_x0020_World_x0020_Z>0.62</_x0020_World_x0020_Z>
@@ -174,5 +174,47 @@
     <_x0020_World_x0020_X>0.43</_x0020_World_x0020_X>
     <_x0020_World_x0020_Y>2.19</_x0020_World_x0020_Y>
     <_x0020_World_x0020_Z>3.29</_x0020_World_x0020_Z>
+  </SpreadTable>
+  <SpreadTable>
+    <Preview_x0020_X>-0.98616600790513831</Preview_x0020_X>
+    <_x0020_Preview_x0020_Y>-0.79494007989347537</_x0020_Preview_x0020_Y>
+    <_x0020_World_x0020_X>0</_x0020_World_x0020_X>
+    <_x0020_World_x0020_Y>0</_x0020_World_x0020_Y>
+    <_x0020_World_x0020_Z>0</_x0020_World_x0020_Z>
+  </SpreadTable>
+  <SpreadTable>
+    <Preview_x0020_X>-0.85375494071146241</Preview_x0020_X>
+    <_x0020_Preview_x0020_Y>-0.818908122503329</_x0020_Preview_x0020_Y>
+    <_x0020_World_x0020_X>0.4699</_x0020_World_x0020_X>
+    <_x0020_World_x0020_Y>0</_x0020_World_x0020_Y>
+    <_x0020_World_x0020_Z>0</_x0020_World_x0020_Z>
+  </SpreadTable>
+  <SpreadTable>
+    <Preview_x0020_X>-0.6620553359683794</Preview_x0020_X>
+    <_x0020_Preview_x0020_Y>-0.82423435419440749</_x0020_Preview_x0020_Y>
+    <_x0020_World_x0020_X>0.9398</_x0020_World_x0020_X>
+    <_x0020_World_x0020_Y>0</_x0020_World_x0020_Y>
+    <_x0020_World_x0020_Z>0</_x0020_World_x0020_Z>
+  </SpreadTable>
+  <SpreadTable>
+    <Preview_x0020_X>-0.88754940711462449</Preview_x0020_X>
+    <_x0020_Preview_x0020_Y>-0.6993342210386152</_x0020_Preview_x0020_Y>
+    <_x0020_World_x0020_X>0</_x0020_World_x0020_X>
+    <_x0020_World_x0020_Y>0</_x0020_World_x0020_Y>
+    <_x0020_World_x0020_Z>0.4699</_x0020_World_x0020_Z>
+  </SpreadTable>
+  <SpreadTable>
+    <Preview_x0020_X>-0.79525691699604739</Preview_x0020_X>
+    <_x0020_Preview_x0020_Y>-0.627906976744186</_x0020_Preview_x0020_Y>
+    <_x0020_World_x0020_X>0</_x0020_World_x0020_X>
+    <_x0020_World_x0020_Y>0</_x0020_World_x0020_Y>
+    <_x0020_World_x0020_Z>0.9398</_x0020_World_x0020_Z>
+  </SpreadTable>
+  <SpreadTable>
+    <Preview_x0020_X>-0.79367588932806321</Preview_x0020_X>
+    <_x0020_Preview_x0020_Y>-0.47606019151846779</_x0020_Preview_x0020_Y>
+    <_x0020_World_x0020_X>0</_x0020_World_x0020_X>
+    <_x0020_World_x0020_Y>0.4699</_x0020_World_x0020_Y>
+    <_x0020_World_x0020_Z>0.9398</_x0020_World_x0020_Z>
   </SpreadTable>
 </DocumentElement>

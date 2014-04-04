@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
    <PATCH nodename="C:\openFrameworks\apps\Installation.LineOfSight\Tool 5 - Line mapping\main.v4p" systemname="main" filename="C:\kimchiandchips\Installations\VVVV.Patches.DaVinci13\29. Mapping lines\main.v4p">
-   <BOUNDS type="Window" left="2070" top="2430" width="12510" height="15795">
+   <BOUNDS type="Window" left="8160" top="3495" width="12420" height="11220">
    </BOUNDS>
    <NODE systemname="HTTP (Network Server)" nodename="HTTP (Network Server)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="2880" top="5775" width="100" height="100">
@@ -33,20 +33,6 @@
    <LINK srcnodeid="4" srcpinname="String" dstnodeid="0" dstpinname="Content">
    </LINK>
    <LINK srcnodeid="2" srcpinname="Element" dstnodeid="4" dstpinname="Object">
-   </LINK>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="5" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="2655" top="6435" width="4005" height="3885">
-   </BOUNDS>
-   <BOUNDS type="Node" left="2655" top="6435" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Default" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="File Mask" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="4" srcpinname="String" dstnodeid="5" dstpinname="Input String">
    </LINK>
    <NODE systemname="Element (XElement Join)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Element (XElement Join)" componentmode="Hidden" id="6">
    <BOUNDS type="Node" left="3465" top="3315" width="100" height="100">
@@ -84,7 +70,7 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="TableView (Table)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.Table.dll" nodename="TableView (Table)" componentmode="InAWindow" id="12">
+   <NODE systemname="TableView (Table)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.Table.dll" nodename="TableView (Table)" componentmode="Hidden" id="12">
    <BOUNDS type="Node" left="6690" top="1470" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Table" visible="1" slicecount="1" values="||">
@@ -1051,11 +1037,11 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="87" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="4830" top="15" width="1770" height="240">
+   <BOUNDS type="Box" left="4830" top="15" width="3630" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="4830" top="15" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" values="..\Data\lines_withinProjectorViews">
+   <PIN pinname="Input String" slicecount="1" values="..\Data\lines_withinProjectorViews.xml">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="spreadtable.xml">
    </PIN>
@@ -1444,13 +1430,15 @@
    </LINK>
    <LINK srcnodeid="134" srcpinname="Table" dstnodeid="133" dstpinname="Table">
    </LINK>
-   <NODE systemname="ProjectorControl (DX11)" filename="..\Common\ProjectorControl (DX11).v4p" nodename="ProjectorControl (DX11)" componentmode="Hidden" id="148">
+   <NODE systemname="ProjectorControl (DX11)" filename="..\Common\ProjectorControl (DX11).v4p" nodename="ProjectorControl (DX11)" componentmode="InAWindow" id="148">
    <BOUNDS type="Node" left="720" top="15660" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
    <PIN pinname="Initialise Displays" slicecount="1" values="0">
    </PIN>
+   <BOUNDS type="Window" left="1200" top="2010" width="13965" height="10935">
+   </BOUNDS>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="149" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="1170" top="14685" width="480" height="480">
@@ -1499,9 +1487,9 @@
    <LINK srcnodeid="8" srcpinname="Table" dstnodeid="12" dstpinname="Table">
    </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="152" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="3480" top="90" width="795" height="240">
+   <BOUNDS type="Box" left="3015" top="15" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="3480" top="90" width="0" height="0">
+   <BOUNDS type="Node" left="3015" top="15" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input String" slicecount="1" values="|x1,y1,x2,y2,iProjector,ID|">
    </PIN>
@@ -1579,5 +1567,85 @@
    <LINK srcnodeid="84" srcpinname="Input Index" dstnodeid="162" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="94" srcpinname="Layer Out" dstnodeid="148" dstpinname="Layers">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="163" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4140" top="120" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4140" top="120" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Auto Save|">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="163" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Auto Save">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="164" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="885" top="2490" width="1980" height="810">
+   </BOUNDS>
+   <BOUNDS type="Node" left="885" top="2490" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Status" dstnodeid="164" dstpinname="Input String">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="165" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="6615" top="19020" width="1200" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6615" top="19020" width="1200" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|Improv loader:|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="Reader (String)" filename="%VVVV%\lib\nodes\modules\String\Reader (String).v4p" nodename="Reader (String)" componentmode="Hidden" id="166">
+   <BOUNDS type="Node" left="8100" top="19140" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="Read" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="87" srcpinname="Output String" dstnodeid="166" dstpinname="Filename">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="167" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="8850" top="18495" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8850" top="18495" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Read">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="167" srcpinname="Y Output Value" dstnodeid="166" dstpinname="Read">
    </LINK>
    </PATCH>
