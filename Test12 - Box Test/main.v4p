@@ -1,13 +1,13 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
    <PATCH nodename="C:\Users\Andreas\Documents\VVVV\LineOfSight\Test12 - Box Test\main.v4p" systemname="main" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\main.v4p">
-   <BOUNDS type="Window" left="0" top="0" width="15525" height="11760">
+   <BOUNDS type="Window" left="4725" top="735" width="14685" height="11700">
    </BOUNDS>
-   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="0">
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="0" stayontop="0">
    <BOUNDS type="Node" left="300" top="15480" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="300" top="15480" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="22890" top="315" width="14445" height="11760">
+   <BOUNDS type="Window" left="27975" top="0" width="12915" height="11070">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -473,7 +473,7 @@
    </BOUNDS>
    </NODE>
    <NODE systemname="Boxes" filename="..\Layers\Boxes.v4p" nodename="..\Layers\Boxes.v4p" componentmode="InAWindow" id="128">
-   <BOUNDS type="Node" left="16845" top="10230" width="3765" height="270">
+   <BOUNDS type="Node" left="16875" top="10935" width="3765" height="270">
    </BOUNDS>
    <PIN pinname="Room Scale" visible="1">
    </PIN>
@@ -483,6 +483,8 @@
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
+   <BOUNDS type="Window" left="585" top="390" width="14730" height="11055">
+   </BOUNDS>
    </NODE>
    <LINK srcnodeid="45" srcpinname="Y Output Value" dstnodeid="128" dstpinname="Room Scale">
    </LINK>

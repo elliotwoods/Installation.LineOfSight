@@ -6,12 +6,14 @@
 Texture2D<float3> texture2d : PREVIOUS;
 float Alpha = 1.0f;
 float Time = 0.0f;
-float PerlinSpaceDivider = 1.0f;
+float3 PerlinSpaceDivider = float3(1,1,1);
 float Threshold = 1.0f;
 float4x4 TransformInverse;
 float2 TargetSize:TARGETSIZE;
 
 Texture2D<float3> colorTexture;
+
+float4 LineColor <bool color=true;String uiname="Line Color";> = { 1.0f,1.0f,1.0f,1.0f };
 
 // ----------------------------------------------------
 SamplerState linearSampler : IMMUTABLE
@@ -293,19 +295,22 @@ float4 PSPerlinNoiseVolume(psInput input) : SV_Target
 	
 	float perlinSpaceDivider = 1.0f;
 	
-	World /= PerlinSpaceDivider;
+	World.xyz /= PerlinSpaceDivider;
 	
 	float perlinVal = snoise( float4( World.xyz, Time) );
 	perlinVal = (perlinVal * 0.5) + 0.5;
-	
+		
 	if( Threshold < 1.0 )
 	{
 		perlinVal = step( perlinVal, Threshold );
 	}
 	
-	perlinVal = lerp( perlinVal, 0.0, 1.0-Alpha );
+	float4 lineCol = LineColor * perlinVal;//float4(perlinVal,perlinVal,perlinVal,1);	
 	
-	return perlinVal;
+	//perlinVal = lerp( perlinVal, 0.0, 1.0-Alpha );
+	lineCol = lerp( lineCol, float4(0,0,0,0), 1.0-Alpha );	
+	
+	return lineCol;
 }
 
 

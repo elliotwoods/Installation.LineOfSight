@@ -6,20 +6,30 @@
 Texture2D<float3> texture2d : PREVIOUS;
 float Alpha = 1.0f;
 float Time = 0.0f;
-float PerlinSpaceDivider = 1.0f;
+float3 PerlinSpaceDivider = float3(1,1,1);
 float4x4 TransformInverse;
 float2 TargetSize:TARGETSIZE;
 
 Texture2D<float3> paletteTexture;
 
 // ----------------------------------------------------
-SamplerState linearSampler : IMMUTABLE
+SamplerState WorldSampler : IMMUTABLE
 {
     Filter = MIN_MAG_MIP_LINEAR;
 	//Filter = MIN_MAG_MIP_POINT;
     AddressU = Clamp;
     AddressV = Clamp;
 };
+
+// ----------------------------------------------------
+SamplerState PaletteSampler : IMMUTABLE
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+	//Filter = MIN_MAG_MIP_POINT;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
 
 // ----------------------------------------------------
 struct psInput
@@ -292,13 +302,13 @@ float4 PSPerlinNoiseVolume(psInput input) : SV_Target
 	
 	float perlinSpaceDivider = 1.0f;
 	
-	World /= PerlinSpaceDivider;
+	World.xyz /= PerlinSpaceDivider;
 	
 	float perlinVal = snoise( float4( World.xyz, Time) );
 	perlinVal = (perlinVal * 0.5) + 0.5;
 	
 	float2 lookupUV = float2(perlinVal, 0.0);
-	float3 paletteCol = paletteTexture.Sample(linearSampler,lookupUV);	
+	float3 paletteCol = paletteTexture.Sample(PaletteSampler,lookupUV);	
 		
 	float3 finalCol = lerp( paletteCol, float3(0,0,0), 1.0-Alpha);
 	return float4(finalCol, 1.0);
