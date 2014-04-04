@@ -7,7 +7,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="300" top="15480" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="26265" top="-15" width="14625" height="11085">
+   <BOUNDS type="Window" left="27975" top="-15" width="12915" height="11085">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -475,7 +475,7 @@
    <NODE systemname="Sunrise" filename="..\Layers\Sunrise.v4p" nodename="..\Layers\Sunrise.v4p" componentmode="InAWindow" id="125">
    <BOUNDS type="Node" left="16890" top="11250" width="3720" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="330" top="720" width="19875" height="11025">
+   <BOUNDS type="Window" left="-120" top="-120" width="20730" height="11760">
    </BOUNDS>
    <PIN pinname="OSC Input" visible="1">
    </PIN>
