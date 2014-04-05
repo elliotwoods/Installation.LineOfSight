@@ -81,6 +81,18 @@ float4 PSPlane(psInput input) : SV_Target
 	return 1 - smoothstep(0.0f, Thickness, abs(length(World.y) - Radius));
 }
 
+float4 PSPlaneSection(psInput input) : SV_Target
+{
+	float4 World;
+	World.xyz = texture2d.Sample(linearSampler,input.uv);
+	World.w = 1.0f;
+	float4 Object = mul(World, TransformInverse);
+	
+	float value = 1 - smoothstep(0.0f, Thickness, abs(length(Object.y) - Radius));
+	value *= abs(Object.x) < 1.0f && abs(Object.z) < 1.0f;
+	return value;
+}
+
 float4 PSPassThrough(psInput input) : SV_Target
 {
 	float4 World;
@@ -142,6 +154,14 @@ technique10 Plane
 	pass P0
 	{
 		SetPixelShader(CompileShader(ps_4_0,PSPlane()));
+	}
+}
+
+technique10 PlaneSection
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,PSPlaneSection()));
 	}
 }
 
