@@ -1,0 +1,39 @@
+//@author: elliotwoods
+//@help: template for texture fx
+//@tags: texture
+//@credits: 
+
+Texture2D textureWorld : PREVIOUS;
+Texture2D textureDirection;
+
+SamplerState linearSampler : IMMUTABLE
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+struct psInput
+{
+	float4 p : SV_Position;
+	float2 uv : TEXCOORD0;
+};
+
+float3 Direction = float3(1.0f, 0.0f, 0.0f);
+float Threshold = 0.3f;
+float4 PSSelectDirection(psInput input) : SV_Target
+{
+	float4 transmission = textureDirection.Sample(linearSampler,input.uv);
+	return 1.0f - smoothstep(0, Threshold, 1.0f - abs(dot(normalize(transmission.xyz), normalize(Direction))));
+}
+
+technique10 SelectDirection
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,PSSelectDirection()));
+	}
+}
+
+
+

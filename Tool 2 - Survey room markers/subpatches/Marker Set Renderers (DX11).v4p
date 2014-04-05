@@ -1,13 +1,13 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
    <PATCH nodename="C:\openFrameworks\apps\Installation.LineOfSight\Tool 2 - Survey room markers\subpatches\Marker Set Renderers (DX11).v4p" systemname="Marker Set Renderers (DX11)" filename="C:\kimchiandchips\Installations\VVVV.Patches.DaVinci13\21. Site survey\subpatches\Marker Set Renderers (DX11).v4p">
-   <BOUNDS type="Window" left="1560" top="5655" width="11430" height="11385">
+   <BOUNDS type="Window" left="1560" top="5655" width="16755" height="11385">
    </BOUNDS>
-   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="35" border="0" stayontop="0">
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="35" border="1" stayontop="0">
    <BOUNDS type="Node" left="1680" top="5900" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="1680" top="5900" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="15195" top="-150" width="12675" height="11685">
+   <BOUNDS type="Window" left="3450" top="0" width="15420" height="11775">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -76,12 +76,12 @@
    </NODE>
    <LINK srcnodeid="32" srcpinname="Layer Out" dstnodeid="35" dstpinname="Layers">
    </LINK>
-   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="31" border="0">
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="31" border="1">
    <BOUNDS type="Node" left="4230" top="5915" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="4230" top="5915" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="18000" top="11685" width="6240" height="4410">
+   <BOUNDS type="Window" left="22560" top="11505" width="6240" height="4410">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>

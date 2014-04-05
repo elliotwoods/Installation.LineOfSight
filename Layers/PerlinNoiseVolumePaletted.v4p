@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
-   <PATCH nodename="C:\Users\Andreas\Documents\VVVV\LineOfSight\Layers\PerlinNoiseVolumePaletted.v4p" systemname="Template" filename="C:\Users\Andreas\Documents\VVVV\LineOfSight\Layers\Template.v4p">
-   <BOUNDS type="Window" left="1350" top="1155" width="17715" height="9240">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
+   <PATCH nodename="C:\openFrameworks\apps\Installation.LineOfSight\Layers\PerlinNoiseVolumePaletted.v4p" systemname="Template" filename="C:\Users\Andreas\Documents\VVVV\LineOfSight\Layers\Template.v4p">
+   <BOUNDS type="Window" left="3030" top="2505" width="17715" height="9240">
    </BOUNDS>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="14" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="13875" top="15915" width="795" height="240">
@@ -24,18 +24,6 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Transform (OSC)" filename="..\Common\Transform (OSC).v4p" nodename="..\Common\Transform (OSC).v4p" componentmode="Hidden" id="18">
-   <BOUNDS type="Node" left="8745" top="2835" width="1920" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="3705" top="1395" width="11550" height="8505">
-   </BOUNDS>
-   <BOUNDS type="Window" left="3900" top="1410" width="11550" height="9660">
-   </BOUNDS>
-   <PIN pinname="Transform Out" visible="1">
-   </PIN>
-   <PIN pinname="Room Scale" visible="1">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="19" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="8700" top="270" width="795" height="240">
    </BOUNDS>
@@ -48,8 +36,6 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="19" srcpinname="Output Node" dstnodeid="18" dstpinname="OSC Input">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="20" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="9660" top="240" width="795" height="720">
    </BOUNDS>
@@ -70,8 +56,6 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="20" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Room Scale">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="22" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="10620" top="2085" width="795" height="480">
    </BOUNDS>
@@ -92,8 +76,6 @@
    <PIN pinname="Default" slicecount="1" values="|0, 0|">
    </PIN>
    </NODE>
-   <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Object Index">
-   </LINK>
    <NODE systemname="+(DX11.Texture2D Spectral)" filename="..\modules\+(DX11.Texture2D Spectral).v4p" nodename="..\modules\+(DX11.Texture2D Spectral).v4p" componentmode="Hidden" id="23">
    <BOUNDS type="Node" left="13890" top="15345" width="100" height="100">
    </BOUNDS>
@@ -136,8 +118,6 @@
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="18" srcpinname="Transform Out" dstnodeid="33" dstpinname="Input Node">
-   </LINK>
    <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="33" dstpinname="Index">
    </LINK>
    <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="46">
@@ -493,7 +473,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.41">
+   <PIN pinname="Y Input Value" slicecount="1" values="0.3">
    </PIN>
    </NODE>
    <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="70">
@@ -591,7 +571,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="26610" top="855" width="795" height="240">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="30">
+   <PIN pinname="Y Input Value" slicecount="1" values="40">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
