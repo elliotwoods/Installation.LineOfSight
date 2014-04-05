@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
-   <PATCH nodename="C:\Users\Andreas\Documents\VVVV\LineOfSight\Test12 - Box Test\main.v4p" systemname="main" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\main.v4p">
+   <PATCH nodename="C:\Users\Andreas\Documents\VVVV\LineOfSight\Test12 - Select Line Note\main.v4p" systemname="main" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\main.v4p">
    <BOUNDS type="Window" left="4725" top="735" width="14685" height="11700">
    </BOUNDS>
    <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="0" stayontop="0">
@@ -7,7 +7,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="300" top="15480" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="27975" top="0" width="12915" height="11070">
+   <BOUNDS type="Window" left="27315" top="0" width="12915" height="11070">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -57,9 +57,9 @@
    <LINK srcnodeid="17" srcpinname="Layer Out" dstnodeid="14" dstpinname="Layer In">
    </LINK>
    <NODE systemname="DataAsTexture" filename="subpatches\DataAsTexture.v4p" nodename="subpatches\DataAsTexture.v4p" componentmode="Hidden" id="40">
-   <BOUNDS type="Node" left="2250" top="4035" width="3870" height="270">
+   <BOUNDS type="Node" left="2355" top="3840" width="3870" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="0" top="2245" width="4900" height="3580">
+   <BOUNDS type="Box" left="105" top="2050" width="4900" height="3580">
    </BOUNDS>
    <BOUNDS type="Window" left="8550" top="1800" width="8115" height="14130">
    </BOUNDS>
@@ -77,9 +77,9 @@
    </PIN>
    </NODE>
    <NODE systemname="GenerateStartEnd" filename="subpatches\GenerateStartEnd.v4p" nodename="subpatches\GenerateStartEnd.v4p" componentmode="Hidden" id="42">
-   <BOUNDS type="Node" left="4161" top="3216" width="1950" height="270">
+   <BOUNDS type="Node" left="3471" top="2766" width="1950" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="900" top="0" width="10645" height="8310">
+   <BOUNDS type="Box" left="210" top="0" width="10645" height="8310">
    </BOUNDS>
    <BOUNDS type="Window" left="8580" top="4755" width="10650" height="8310">
    </BOUNDS>
@@ -237,9 +237,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="46" srcpinname="Y Output Value" dstnodeid="40" dstpinname="Line Count" linkstyle="Bezier">
-   <LINKPOINT x="4140" y="2610">
+   <LINKPOINT x="4175" y="2545">
    </LINKPOINT>
-   <LINKPOINT x="2295" y="2610">
+   <LINKPOINT x="2365" y="2480">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InABox" id="85">
@@ -466,28 +466,16 @@
    <BOUNDS type="Node" left="29625" top="10335" width="100" height="100">
    </BOUNDS>
    </NODE>
-   <NODE systemname="Boxes" filename="..\Layers\Boxes.v4p" nodename="..\Layers\Boxes.v4p" componentmode="InAWindow" id="128">
-   <BOUNDS type="Node" left="22605" top="11220" width="3765" height="270">
-   </BOUNDS>
-   <PIN pinname="Room Scale" visible="1" slicecount="3" values="7.2,2.5,4.8">
-   </PIN>
-   <PIN pinname="World Texture" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="OSC Input" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Texture Out" visible="1">
-   </PIN>
-   <BOUNDS type="Window" left="585" top="390" width="14730" height="11055">
-   </BOUNDS>
-   </NODE>
    <NODE systemname="ReadLinesProcessed (XML)" filename="..\Common\ReadLinesProcessed (XML).v4p" nodename="ReadLinesProcessed (XML)" componentmode="InAWindow" id="129">
-   <BOUNDS type="Node" left="12510" top="1185" width="100" height="100">
+   <BOUNDS type="Node" left="10350" top="135" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
+   <BOUNDS type="Window" left="2550" top="2145" width="15045" height="11760">
+   </BOUNDS>
    </NODE>
    <NODE systemname="Unzip (Value Bin)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Unzip (Value Bin)" componentmode="Hidden" id="130">
-   <BOUNDS type="Node" left="12495" top="2235" width="100" height="100">
+   <BOUNDS type="Node" left="10485" top="870" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -499,9 +487,9 @@
    <LINK srcnodeid="129" srcpinname="Output" dstnodeid="130" dstpinname="Input">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="131" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="14190" top="1845" width="795" height="480">
+   <BOUNDS type="Box" left="12060" top="75" width="795" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="14190" top="1845" width="0" height="0">
+   <BOUNDS type="Node" left="12060" top="75" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="2" values="3,3">
    </PIN>
@@ -528,98 +516,32 @@
    </LINK>
    <LINK srcnodeid="130" srcpinname="Output 2" dstnodeid="55" dstpinname="End XYZ">
    </LINK>
-   <NODE systemname="SortLineLengths" filename="..\Common\SortLineLengths.v4p" nodename="..\Common\SortLineLengths.v4p" componentmode="InAWindow" id="132">
-   <BOUNDS type="Node" left="13215" top="2895" width="100" height="100">
+   <NODE systemname="SelectLinesNotes" filename="..\Layers\SelectLinesNotes.v4p" nodename="..\Layers\SelectLinesNotes.v4p" componentmode="InAWindow" id="142">
+   <BOUNDS type="Node" left="16545" top="6105" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
    <PIN pinname="Input 2" visible="1">
    </PIN>
-   <PIN pinname="Sorted Indicies By Line Length" visible="1">
+   <PIN pinname="Input 1" visible="1">
    </PIN>
-   </NODE>
-   <LINK srcnodeid="130" srcpinname="Output 1" dstnodeid="132" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="130" srcpinname="Output 2" dstnodeid="132" dstpinname="Input 2">
-   </LINK>
-   <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="133">
-   <BOUNDS type="Node" left="13785" top="3450" width="100" height="100">
+   <BOUNDS type="Window" left="3315" top="2160" width="12390" height="6675">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Count" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="132" srcpinname="Sorted Indicies By Line Length" dstnodeid="133" dstpinname="Input">
-   </LINK>
-   <NODE systemname="GetSlice (Spreads)" nodename="GetSlice (Spreads)" componentmode="Hidden" id="134">
-   <BOUNDS type="Node" left="13200" top="4770" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Index" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="132" srcpinname="Sorted Indicies By Line Length" dstnodeid="134" dstpinname="Input">
-   </LINK>
-   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="135">
-   <BOUNDS type="Node" left="13500" top="4020" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Destination Maximum" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="133" srcpinname="Count" dstnodeid="135" dstpinname="Destination Maximum">
-   </LINK>
-   <LINK srcnodeid="135" srcpinname="Output" dstnodeid="134" dstpinname="Index">
-   </LINK>
-   <NODE systemname="SelectLine" filename="..\Layers\SelectLine.v4p" nodename="..\Layers\SelectLine.v4p" componentmode="InAWindow" id="137">
-   <BOUNDS type="Node" left="16530" top="6390" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Line Index" visible="1" slicecount="1" values="256">
-   </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
    <PIN pinname="World XYZ" visible="1">
    </PIN>
-   <BOUNDS type="Window" left="6240" top="1530" width="9000" height="8580">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="137" srcpinname="Output" dstnodeid="77" dstpinname="Texture In">
-   </LINK>
-   <LINK srcnodeid="40" srcpinname="StartEnd TextureXYZ" dstnodeid="137" dstpinname="World XYZ">
-   </LINK>
-   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="139">
-   <BOUNDS type="Node" left="17850" top="3735" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="17850" top="3735" width="795" height="240">
-   </BOUNDS>
-   <PIN pinname="Minimum" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Maximum" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.81">
+   <PIN pinname="OSC Input" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="134" srcpinname="Output" dstnodeid="137" dstpinname="Line Index">
+   <LINK srcnodeid="130" srcpinname="Output 2" dstnodeid="142" dstpinname="Input 2">
    </LINK>
-   <LINK srcnodeid="139" srcpinname="Y Output Value" dstnodeid="135" dstpinname="Input">
+   <LINK srcnodeid="130" srcpinname="Output 1" dstnodeid="142" dstpinname="Input 1">
    </LINK>
-   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="140">
-   <BOUNDS type="Node" left="12555" top="5310" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="12555" top="5310" width="795" height="240">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="134" srcpinname="Output" dstnodeid="140" dstpinname="Y Input Value">
+   <LINK srcnodeid="142" srcpinname="Output" dstnodeid="77" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="142" srcpinname="Output" dstnodeid="65" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="40" srcpinname="StartEnd TextureXYZ" dstnodeid="142" dstpinname="World XYZ">
+   </LINK>
+   <LINK srcnodeid="94" srcpinname="Output" dstnodeid="142" dstpinname="OSC Input">
    </LINK>
    </PATCH>

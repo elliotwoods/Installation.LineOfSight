@@ -1,0 +1,41 @@
+//@author: elliotwoods
+//@help: resample up a 2xN texture to a MxN
+//@tags: texture
+//@
+//@credits: elliotwoods
+
+Texture2D Input;
+
+SamplerState linearSampler : IMMUTABLE
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+struct psInput
+{
+	float4 p : SV_Position;
+	float2 uv : TEXCOORD0;
+};
+
+
+float4 PS(psInput input) : SV_Target
+{
+	float y = input.uv.y;
+	float4 left = Input.Sample(linearSampler,float2(0.0f, y));
+	float4 right = Input.Sample(linearSampler,float2(1.0f, y));
+	float4 c = lerp(left, right, input.uv.x);
+	return c;
+}
+
+technique10 Process
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,PS()));
+	}
+}
+
+
+
