@@ -1,13 +1,13 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
    <PATCH nodename="C:\Users\Andreas\Documents\VVVV\LineOfSight\Test9 - Sunrise OSC\main.v4p" systemname="main" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\main.v4p">
-   <BOUNDS type="Window" left="0" top="0" width="14400" height="11760">
+   <BOUNDS type="Window" left="0" top="0" width="12930" height="11700">
    </BOUNDS>
-   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="0">
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="0" stayontop="1">
    <BOUNDS type="Node" left="300" top="15480" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="300" top="15480" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="22890" top="315" width="14445" height="11760">
+   <BOUNDS type="Window" left="27975" top="-15" width="12915" height="11085">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -475,7 +475,7 @@
    <NODE systemname="Sunrise" filename="..\Layers\Sunrise.v4p" nodename="..\Layers\Sunrise.v4p" componentmode="InAWindow" id="125">
    <BOUNDS type="Node" left="16890" top="11250" width="3720" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="4740" top="2130" width="15495" height="10770">
+   <BOUNDS type="Window" left="-120" top="-120" width="20730" height="11760">
    </BOUNDS>
    <PIN pinname="OSC Input" visible="1">
    </PIN>

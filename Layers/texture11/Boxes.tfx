@@ -6,15 +6,33 @@
 Texture2D<float3> texture2d : PREVIOUS;
 float4x4 TransformInverse;
 float2 R:TARGETSIZE;
+float Time;
 
 Texture2D<float3> colorTexture;
 
-SamplerState linearSampler : IMMUTABLE
+SamplerState LineDataSampler : IMMUTABLE
 {
     Filter = MIN_MAG_MIP_LINEAR;
     AddressU = Clamp;
     AddressV = Clamp;
 };
+
+SamplerState PaletteSamplerClamped : IMMUTABLE
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+	//Filter = MIN_MAG_MIP_POINT;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+SamplerState PaletteSamplerWrapped : IMMUTABLE
+{
+    //Filter = MIN_MAG_MIP_LINEAR;
+	Filter = MIN_MAG_MIP_POINT;
+    AddressU = Wrap;
+    AddressV = Wrap;
+};
+
 
 struct psInput
 {
@@ -35,13 +53,36 @@ float mapClamped( float value, float inputMin, float inputMax, float outputMin, 
 float4 PSBox(psInput input) : SV_Target
 {
 	float4 World;
-	World.xyz = texture2d.Sample(linearSampler,input.uv);
+	World.xyz = texture2d.Sample(LineDataSampler,input.uv);
 	World.w = 1.0f;
 	World = mul(World, TransformInverse);
 	
+	/*
+	// just a white cube
 	return stepInOut( -0.5, 0.5, World.x ) *
 	       stepInOut( -0.5, 0.5, World.y ) *
 	       stepInOut( -0.5, 0.5, World.z );
+	*/
+	
+	float isInVolume = 	stepInOut( -0.5, 0.5, World.x ) *
+	      	 			stepInOut( -0.5, 0.5, World.y ) *
+	      	 			stepInOut( -0.5, 0.5, World.z );
+	
+	if( isInVolume > 0.0f )
+	{
+		float lookupX = map( World.y, -0.5, 0.5, 0.0, 1.0 ) + Time;
+		float2 lookupUV = float2( lookupX, 0.5 );	
+		//float3 paletteCol = colorTexture.Sample(PaletteSamplerClamped,lookupUV);	
+		float3 paletteCol = colorTexture.Sample(PaletteSamplerWrapped,lookupUV);		
+		
+		//return float4(lookupX,lookupX,lookupX,1.0);
+		
+		return float4( paletteCol, 1.0 );
+	}
+	else
+	{
+		return 0.0f;
+	}
 	
 }
 

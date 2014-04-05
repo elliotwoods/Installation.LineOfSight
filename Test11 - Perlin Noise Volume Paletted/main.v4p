@@ -1,13 +1,13 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta31.2.dtd" >
    <PATCH nodename="C:\Users\Andreas\Documents\VVVV\LineOfSight\Test11 - Perlin Noise Volume Paletted\main.v4p" systemname="main" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\main.v4p">
-   <BOUNDS type="Window" left="0" top="0" width="15525" height="11760">
+   <BOUNDS type="Window" left="0" top="0" width="20310" height="11700">
    </BOUNDS>
    <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="0">
    <BOUNDS type="Node" left="300" top="15480" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="300" top="15480" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="22890" top="315" width="14445" height="11760">
+   <BOUNDS type="Window" left="26910" top="0" width="13980" height="11070">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -233,9 +233,9 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InABox" id="77">
-   <BOUNDS type="Node" left="16890" top="11760" width="100" height="100">
+   <BOUNDS type="Node" left="16935" top="10065" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="16890" top="11760" width="3855" height="6750">
+   <BOUNDS type="Box" left="16935" top="10065" width="3855" height="6750">
    </BOUNDS>
    <BOUNDS type="Window" left="7425" top="14190" width="6240" height="5010">
    </BOUNDS>
@@ -475,7 +475,7 @@
    <NODE systemname="PerlinNoiseVolumePaletted" filename="..\Layers\PerlinNoiseVolumePaletted.v4p" nodename="..\Layers\PerlinNoiseVolumePaletted.v4p" componentmode="InAWindow" id="127">
    <BOUNDS type="Node" left="16950" top="9465" width="3420" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="1350" top="1770" width="15495" height="7620">
+   <BOUNDS type="Window" left="1350" top="1155" width="17715" height="9240">
    </BOUNDS>
    <PIN pinname="World Texture" visible="1">
    </PIN>
@@ -495,5 +495,59 @@
    <LINK srcnodeid="127" srcpinname="Texture Out" dstnodeid="77" dstpinname="Texture In">
    </LINK>
    <LINK srcnodeid="94" srcpinname="Output" dstnodeid="127" dstpinname="OSC Input">
+   </LINK>
+   <NODE systemname="Translate (Transform Vector)" nodename="Translate (Transform Vector)" componentmode="Hidden" id="132">
+   <BOUNDS type="Node" left="11175" top="28890" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Subtract (Value)" nodename="Subtract (Value)" componentmode="Hidden" id="131">
+   <BOUNDS type="Node" left="11865" top="28410" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="130">
+   <BOUNDS type="Node" left="12465" top="27915" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="130" srcpinname="Output" dstnodeid="131" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="131" srcpinname="Output" dstnodeid="132" dstpinname="XYZ">
+   </LINK>
+   <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="129">
+   <BOUNDS type="Node" left="11190" top="28470" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="129" srcpinname="Transform Out" dstnodeid="132" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="128">
+   <BOUNDS type="Node" left="11550" top="27915" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Period" slicecount="1" values="120">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="128" srcpinname="Output" dstnodeid="129" dstpinname="Y">
    </LINK>
    </PATCH>
