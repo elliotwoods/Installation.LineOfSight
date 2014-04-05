@@ -475,7 +475,7 @@
    <NODE systemname="PerlinNoiseVolumePaletted" filename="..\Layers\PerlinNoiseVolumePaletted.v4p" nodename="..\Layers\PerlinNoiseVolumePaletted.v4p" componentmode="InAWindow" id="127">
    <BOUNDS type="Node" left="16950" top="9465" width="3420" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="1350" top="1155" width="17715" height="9240">
+   <BOUNDS type="Window" left="10710" top="0" width="9780" height="11520">
    </BOUNDS>
    <PIN pinname="World Texture" visible="1">
    </PIN>

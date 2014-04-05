@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
    <PATCH nodename="C:\openFrameworks\apps\Installation.LineOfSight\Common\ProjectorControl (DX11).v4p" systemname="ProjectorControl (DX11)" filename="C:\openFrameworks\apps\Installation.LineOfSight\Common\ProjectorControl (DX11).v4p">
-   <BOUNDS type="Window" left="1005" top="1515" width="12390" height="11070">
+   <BOUNDS type="Window" left="2520" top="4995" width="12390" height="11070">
    </BOUNDS>
    <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="FullScreen" id="3">
    <BOUNDS type="Node" left="270" top="11640" width="100" height="100">
@@ -652,7 +652,7 @@
    </LINK>
    <LINK srcnodeid="55" srcpinname="Y Output Value" dstnodeid="59" dstpinname="Index">
    </LINK>
-   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="61" border="0">
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="Hidden" id="61" border="0">
    <BOUNDS type="Node" left="5940" top="13005" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="5940" top="13005" width="6000" height="4500">
@@ -666,7 +666,7 @@
    </NODE>
    <LINK srcnodeid="7" srcpinname="Texture Out" dstnodeid="61" dstpinname="Texture In">
    </LINK>
-   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="65" border="0">
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="Hidden" id="65" border="0">
    <BOUNDS type="Node" left="3735" top="13005" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="3735" top="13005" width="6000" height="4500">
@@ -678,7 +678,7 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="B">
    </PIN>
    </NODE>
-   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="66" border="0">
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="Hidden" id="66" border="0">
    <BOUNDS type="Node" left="1650" top="13005" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="1650" top="13005" width="6000" height="4500">

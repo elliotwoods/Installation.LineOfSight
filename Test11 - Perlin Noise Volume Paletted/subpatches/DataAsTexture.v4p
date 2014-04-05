@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
-   <PATCH nodename="C:\openframeworks\apps\installation.lineofsight\Test11 - Perlin Noise Volume Paletted\subpatches\DataAsTexture.v4p" systemname="DataAsTexture" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\subpatches\DataAsTexture.v4p">
+   <PATCH nodename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\subpatches\DataAsTexture.v4p" systemname="DataAsTexture" filename="C:\Users\elliot\Desktop\Line Of Sight\Test2 - Line Generator\subpatches\DataAsTexture.v4p">
    <BOUNDS type="Window" left="8550" top="1800" width="8115" height="14130">
    </BOUNDS>
    <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InABox" id="0">
@@ -264,7 +264,7 @@
    </LINK>
    <LINK srcnodeid="29" srcpinname="Output" dstnodeid="3" dstpinname="Data">
    </LINK>
-   <NODE systemname="Resample (DX11.Texture2D)" filename="..\modules\Resample (DX11.Texture2D).v4p" nodename="..\modules\Resample (DX11.Texture2D).v4p" componentmode="InAWindow" id="30">
+   <NODE systemname="Resample (DX11.Texture2D)" filename="..\modules\Resample (DX11.Texture2D).v4p" nodename="..\modules\Resample (DX11.Texture2D).v4p" componentmode="Hidden" id="30">
    <BOUNDS type="Node" left="1050" top="4755" width="0" height="0">
    </BOUNDS>
    <BOUNDS type="Box" left="1050" top="4755" width="3430" height="4165">
