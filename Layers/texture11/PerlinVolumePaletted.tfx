@@ -24,8 +24,8 @@ SamplerState WorldSampler : IMMUTABLE
 // ----------------------------------------------------
 SamplerState PaletteSampler : IMMUTABLE
 {
-    Filter = MIN_MAG_MIP_LINEAR;
-	//Filter = MIN_MAG_MIP_POINT;
+    //Filter = MIN_MAG_MIP_LINEAR;
+	Filter = MIN_MAG_MIP_POINT;
     AddressU = Clamp;
     AddressV = Clamp;
 };

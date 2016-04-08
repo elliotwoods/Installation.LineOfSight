@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
    <PATCH nodename="C:\openFrameworks\apps\Installation.LineOfSight\Layers\PerlinNoisePalettedOSC.v4p" systemname="PerlinNoisePalettedOSC" filename="C:\openFrameworks\apps\Installation.LineOfSight\Layers\PerlinNoisePalettedOSC.v4p">
-   <BOUNDS type="Window" left="3765" top="1380" width="17925" height="11145">
+   <BOUNDS type="Window" left="-240" top="1470" width="17925" height="11145">
    </BOUNDS>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="48" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="9645" top="17010" width="795" height="240">
@@ -24,7 +24,7 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Transform (OSC)" filename="..\Common\Transform (OSC).v4p" nodename="..\Common\Transform (OSC).v4p" componentmode="InAWindow" id="46">
+   <NODE systemname="Transform (OSC)" filename="..\Common\Transform (OSC).v4p" nodename="..\Common\Transform (OSC).v4p" componentmode="Hidden" id="46">
    <BOUNDS type="Node" left="4515" top="3075" width="1920" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="0" top="1635" width="11550" height="8505">
@@ -401,7 +401,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.41">
+   <PIN pinname="Y Input Value" slicecount="1" values="0.2">
    </PIN>
    </NODE>
    <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="23">

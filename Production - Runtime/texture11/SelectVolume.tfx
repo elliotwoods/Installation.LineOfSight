@@ -71,6 +71,7 @@ float4 PSSphereFillGradientNegative(psInput input) : SV_Target
 	return value;
 }
 
+float4 col;
 float4 PSPlane(psInput input) : SV_Target
 {
 	float4 World;
@@ -78,7 +79,7 @@ float4 PSPlane(psInput input) : SV_Target
 	World.w = 1.0f;
 	World = mul(World, TransformInverse);
 	
-	return 1 - smoothstep(0.0f, Thickness, abs(length(World.y) - Radius));
+	return col * (1 - smoothstep(0.0f, Thickness, abs(length(World.y) - Radius)));
 }
 
 float4 PSPassThrough(psInput input) : SV_Target
